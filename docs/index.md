@@ -1,0 +1,3 @@
+# Welcome to the RIMS-Code website
+
+Some intro text...
