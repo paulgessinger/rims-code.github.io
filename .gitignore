@@ -135,6 +135,3 @@ cython_debug/
 
 # PyCharm
 .idea/
-
-# Python version file
-.python-version
