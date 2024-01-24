@@ -1,37 +1,42 @@
 site_name: RIMS-Code
-
-theme:
-  name: material
-  features:
-    - content.code.copy
-    - content.code.select
-    - navigation.footer
-  palette:
-    # Palette toggle for dark mode
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
 site_url: https://rims-code.github.io
 repo_url: https://github.com/RIMS-Code
 site_author: RIMS-Code team
-
+theme:
+  name: material
+  features:
+  - content.code.copy
+  - content.code.select
+  - navigation.footer
+  palette:
+  # Palette toggle for dark mode
+  - scheme: slate
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode
+  # Palette toggle for light mode
+  - scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
 markdown_extensions:
-  - admonition
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-
+- admonition
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+- pymdownx.inlinehilite
+- pymdownx.snippets
 nav:
-  - Home: index.md
-  - Schemes: schemes.md
-  - Contribute: contribute.md
+- Home: index.md
+- Schemes:
+  - Periodic Table: schemes.md
+  - Elements:
+    - Zr:
+      - Overview: zr/index.md
+      - Zr-1: zr/zr-1.md
+    - Ba:
+      - Overview: ba/index.md
+      - Ba-1: ba/ba-1.md
+      - Ba-2: ba/ba-2.md
+- Contribute: contribute.md

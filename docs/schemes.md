@@ -13,13 +13,13 @@ please see [here](../contribute).
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:transparent;border-style:solid;border-width:1px;overflow:hidden;padding:8px 8px;word-break:normal;}
 
-.tg .tg_bbddff{background-color: #bbddff; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_d7d7ff{background-color: #d7d7ff; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_e1eebd{background-color: #e1eebd; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_cdffee{background-color: #cdffee; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_ffe4bb{background-color: #ffe4bb; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_ffc9c9{background-color: #ffc9c9; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_b9ffff{background-color: #b9ffff; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_c8ffc8{background-color: #c8ffc8; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_ffffc7{background-color: #ffffc7; color: #000000; text-align: center; vertical-align: middle;}
+.tg .tg_cdffee{background-color: #cdffee; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_b9ffff{background-color: #b9ffff; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_c8ffc8{background-color: #c8ffc8; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_ffc9c9{background-color: #ffc9c9; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_bbddff{background-color: #bbddff; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_ffe4bb{background-color: #ffe4bb; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_ffffc7{background-color: #ffffc7; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_e1eebd{background-color: #e1eebd; color: #000000; text-align: center; vertical-align: middle;}.tg .tg_d7d7ff{background-color: #d7d7ff; color: #000000; text-align: center; vertical-align: middle;}
 </style>
 
 <table class="tg">
 <tbody>
   <tr>
-    <td class="tg tg_ffffc7"><a href="H.md">H</a></td>
+    <td class="tg tg_ffffc7">H</td>
     <td></td>
     <td></td>
     <td></td>
@@ -102,7 +102,7 @@ please see [here](../contribute).
     <td class="tg tg_ffc9c9">Rb</td>
     <td class="tg tg_d7d7ff">Sr</td>
     <td class="tg tg_bbddff">Y</td>
-    <td class="tg tg_bbddff">Zr</td>
+    <td class="tg tg_bbddff"><a href="../zr/">Zr</a></td>
     <td class="tg tg_bbddff">Nb</td>
     <td class="tg tg_bbddff">Mo</td>
     <td class="tg tg_bbddff">Tc</td>
@@ -120,7 +120,7 @@ please see [here](../contribute).
   </tr>
   <tr>
     <td class="tg tg_ffc9c9">Cs</td>
-    <td class="tg tg_d7d7ff">Ba</td>
+    <td class="tg tg_d7d7ff"><a href="../ba/">Ba</a></td>
     <td align="center">*</td>
     <td class="tg tg_bbddff">Hf</td>
     <td class="tg tg_bbddff">Ta</td>

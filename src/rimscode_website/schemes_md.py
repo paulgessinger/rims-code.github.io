@@ -4,12 +4,17 @@ from typing import Dict, List, Set, Tuple, Union
 
 import numpy as np
 
-from rimscode_website import REPO_PATH
+from rimscode_website import DOCS_PATH
 from rimscode_website.utils import ELEMENTS_BY_NAME, SPECIAL_POSITIONS
 
+# fixme: implement all these functions as a class and clean it up... too much passing around of variables
 
-def write_scheme_md():
-    """Write the elements overview site with links to a Markdown table."""
+
+def write_scheme_md(urls: Dict[str, str]) -> None:
+    """Write the elements overview site with links to a Markdown table.
+
+    :param urls: Dictionary with the element name as key and the URL as value.
+    """
     str_to_write = r"""# RIMS Schemes
 
 Please click on an element in the periodic table below
@@ -24,9 +29,9 @@ please see [here](../contribute).
 """
 
     # add table
-    str_to_write += _table()
+    str_to_write += _table(urls)
 
-    fname = REPO_PATH.joinpath("docs", "schemes.md")
+    fname = DOCS_PATH.joinpath("schemes.md")
     with open(fname, "w") as f:
         # write the header of the site
         f.write(str_to_write)
@@ -46,8 +51,10 @@ def _elements_by_position() -> Dict[Tuple[int, int], List[str]]:
     return {(int(v[0]), int(v[1])): [k, v[2]] for k, v in ELEMENTS_BY_NAME.items()}
 
 
-def _table() -> str:
+def _table(urls: Dict[str, str]) -> str:
     """Generate a HTML table with the elements and links.
+
+    :param urls: Dictionary with the element name as key and the URL as value.
 
     :return: Fully formatted HTML table.
     """
@@ -72,7 +79,7 @@ def _table() -> str:
         # loop over columns
         for col in range(ncols):
             # get the element tag for this row and column
-            table += _table_get_column(row, col)
+            table += _table_get_column(row, col, urls=urls)
 
         # row end tag
         table += "\n  </tr>"
@@ -83,8 +90,15 @@ def _table() -> str:
     return table
 
 
-def _table_get_column(row: int, col: int) -> str:
-    """Return the HTML code for a column for an element at this position."""
+def _table_get_column(row: int, col: int, urls: Dict[str, str]) -> str:
+    """Return the HTML code for a column for an element at this position.
+
+    :param row: The row of the element.
+    :param col: The column of the element.
+    :param urls: Dictionary with the element name as key and the URL as value.
+
+    :return: The HTML code for the column.
+    """
     # get the element tag for this row and column
     element = _elements_by_position().get((row, col), None)
 
@@ -96,24 +110,24 @@ def _table_get_column(row: int, col: int) -> str:
 
     # so we have an element:
     tag_name = _table_style_tag_name(element[1])
-    link = _table_get_url(element[0])
+    link = _table_get_url(element[0], urls=urls)
+
     if link is not None:
         return f'\n    <td class="tg {tag_name}"><a href="{link}">{element[0]}</a></td>'
     else:
         return f'\n    <td class="tg {tag_name}">{element[0]}</td>'
 
 
-def _table_get_url(element: str) -> Union[None, str]:
+def _table_get_url(element: str, urls: Dict[str, str]) -> Union[None, str]:
     """Return the URL for the element if schemes exist.
 
     :param element: The element name, e.g., "H" (not case-sensitive).
+    :param urls: Dictionary with the element name as key and the URL as value.
 
     :return: The URL to the scheme if it exists, return None.
     """
-    # todo get the url by searching the scheme directory for the element as a markdown file
-    if element == "H":
-        return "H.md"
-    return None
+    ret_url = urls.get(element.lower(), None)
+    return "../" + ret_url if isinstance(ret_url, str) else None
 
 
 def _table_style() -> str:
